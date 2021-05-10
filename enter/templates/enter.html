@@ -10,39 +10,32 @@
 <body>
 <h2>Saif's Twitter Clone </h2><br>
 <div class="login">
-    <form id="login" method="get" action="login.php">
-        <label><b>User Handle
-        </b>
-        </label>
-        <input type="text" name="Uname" id="Uname" placeholder="Handle">
-        <br><br>
-        <label><b>Secret Phrase
-        </b>
-        </label>
-        <input type="Password" name="Pass" id="Pass" placeholder="Shhhhhh">
-        <br><br>
-        <input type="button" name="log" id="log" value="Log In Here">
-        <br><br>
-        <input type="checkbox" id="check">
-        <span>Remember me</span>
-        <br><br>
+    <h1>Sign Up</h1>
+    <form method="POST" action="/signup">
+        {% csrf_token %}
+        <input name="username" placeholder="username" />
+        <input name="email" placeholder="email" />
+        <input name="password" placeholder="password" type="password" />
+        <input type="submit" />
     </form>
 
-    <form id="signup" method="get" action="signup.php">
-        <label><b>Desired Handle
-        </b>
-        </label>
-        <input type="text" name="Uname" id="Uname" placeholder="Handle">
-        <br><br>
-        <label><b>Secret Phrase
-        </b>
-        </label>
-        <input type="Password" name="Pass" id="Pass" placeholder="Shhhhhh">
-        <br><br>
-        <input type="button" name="log" id="log" value="Sign Up Here">
-        <br><br>
-        <br><br>
+    <h1>Log In</h1>
+    <form method="POST" action="/login">
+            {% csrf_token %}
+            <input name="username" placeholder="username" />
+            <input name="password" placeholder="password" type="password" />
+            <input type="submit" />
     </form>
+
+    <br><br>
+    {% for user in users %}
+        {if username == user:
+            if password == password:
+                # allow access, shift navigation}
+    {% endfor %}
+    <input type="checkbox" id="check">
+    <span>Remember me</span>
+    <br><br>
 </div>
 </body>
 </html>

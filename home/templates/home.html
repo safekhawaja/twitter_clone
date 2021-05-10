@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Home</title>
-</head>
-<body>
+{% if user.is_authenticated %}
+        <head>
+            <meta charset="UTF-8">
+            <title>Home</title>
+        </head>
+        <body>
 
-</body>
-</html>
+        </body>
+        </html>
+{% else %}
+<a href="/login">Log In</a>
+{% endif %}
